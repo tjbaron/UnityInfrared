@@ -14,8 +14,8 @@
                 #pragma fragment frag
  
                 #include "UnityCG.cginc"
-                #include "Assets/TwoFront/Infrared/Shaders/NoGreenSpectrum.cginc"
-                #include "Assets/TwoFront/Infrared/Shaders/CoreShading.cginc"
+                #include "Assets/Infrared/Shaders/NoGreenSpectrum.cginc"
+                #include "Assets/Infrared/Shaders/CoreShading.cginc"
             ENDCG
         }
    }

@@ -1,4 +1,7 @@
-﻿
+﻿// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
+
 struct v2f {
     float4 pos : SV_POSITION;
     float3 normal : TEXCOORD0;
@@ -17,9 +20,9 @@ uniform float _LowTemp;
 v2f vert(appdata_base v) {
     v2f o;
 
-    o.pos = mul (UNITY_MATRIX_MVP, v.vertex);
-    o.normal = mul((float3x3)_Object2World, v.normal);
-    o.worldvertpos = mul(_Object2World, v.vertex).xyz;
+    o.pos = UnityObjectToClipPos (v.vertex);
+    o.normal = mul((float3x3)unity_ObjectToWorld, v.normal);
+    o.worldvertpos = mul(unity_ObjectToWorld, v.vertex).xyz;
     o.texcoord = TRANSFORM_TEX(v.texcoord, _TempGrad);
 
     return o;

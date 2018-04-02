@@ -37,8 +37,10 @@ public class TemperatureFade : MonoBehaviour {
 
     public float fadeTime = 10.0f;
 
+    Renderer renderer;
 	// Use this for initialization
 	void Start () {
+        renderer = transform.GetComponent<Renderer>();
         updateCurves();
 	}
 	
